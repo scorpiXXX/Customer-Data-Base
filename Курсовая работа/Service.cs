@@ -221,7 +221,7 @@ namespace Курсовая_работа
                             MySqlConnection con = new MySqlConnection(form.connectBD);
                             con.Open();
                             string dataAndType = Regex.Replace(periodTB.Text, @"[^\d]+", "");
-                            if (dataAndType.Length > 0) dataAndType = " STR_TO_DATE('"+dataAndType.Substring(0, 8)+"', '%d%m%Y')" + "," + " STR_TO_DATE('"+dataAndType.Substring(8, 8)+"', '%d%m%Y'),";
+                            if (dataAndType.Length == 8) dataAndType = " STR_TO_DATE('"+dataAndType.Substring(0, 8)+"', '%d%m%Y')" + "," + " STR_TO_DATE('"+dataAndType.Substring(8, 8)+"', '%d%m%Y'),";
                             else dataAndType = "19700101,19700101,";
                             if (typeService.Text == "Сайт") dataAndType += "1";
                             if (typeService.Text == "Хостинг") dataAndType += "2";

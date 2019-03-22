@@ -321,68 +321,75 @@ namespace Курсовая_работа
             string request = Regex.Replace(periodTB.Text, @"[^\d]+", "");
             if (request.Length > 0)
             {
-                request = "SELECT id_service FROM tservice WHERE period_ot BETWEEN STR_TO_DATE('" + request.Substring(0, 8) + "', '%d%m%Y')" + " AND" + " STR_TO_DATE('" + request.Substring(8, 8) + "', '%d%m%Y');";
-                MySqlCommand command = new MySqlCommand(request, con);
-                MySqlDataReader reader = command.ExecuteReader();
-                int i = 0;
-                while (reader.Read())
-                {
-                    i++;
-                }
-                reader.Close();
-                label29.Text += i;
+                try {
+                    request = "SELECT id_service FROM tservice WHERE period_ot BETWEEN STR_TO_DATE('" + request.Substring(0, 8) + "', '%d%m%Y')" + " AND" + " STR_TO_DATE('" + request.Substring(8, 8) + "', '%d%m%Y');";
+                    MySqlCommand command = new MySqlCommand(request, con);
+                    MySqlDataReader reader = command.ExecuteReader();
+                    int i = 0;
+                    while (reader.Read())
+                    {
+                        i++;
+                    }
+                    reader.Close();
+                    label29.Text += i;
 
-                request = Regex.Replace(periodTB.Text, @"[^\d]+", "");
-                request = "SELECT id_service FROM tservice WHERE period_do BETWEEN STR_TO_DATE('" + request.Substring(0, 8) + "', '%d%m%Y')" + " AND" + " STR_TO_DATE('" + request.Substring(8, 8) + "', '%d%m%Y');";
-                command = new MySqlCommand(request, con);
-                reader = command.ExecuteReader();
-                i = 0;
-                while (reader.Read())
-                {
-                    i++;
-                }
-                reader.Close();
-                label28.Text += i;
+                    request = Regex.Replace(periodTB.Text, @"[^\d]+", "");
+                    request = "SELECT id_service FROM tservice WHERE period_do BETWEEN STR_TO_DATE('" + request.Substring(0, 8) + "', '%d%m%Y')" + " AND" + " STR_TO_DATE('" + request.Substring(8, 8) + "', '%d%m%Y');";
+                    command = new MySqlCommand(request, con);
+                    reader = command.ExecuteReader();
+                    i = 0;
+                    while (reader.Read())
+                    {
+                        i++;
+                    }
+                    reader.Close();
+                    label28.Text += i;
 
-                request = Regex.Replace(periodTB.Text, @"[^\d]+", "");
-                request = "SELECT price FROM tservice WHERE period_ot BETWEEN STR_TO_DATE('" + request.Substring(0, 8) + "', '%d%m%Y')" + " AND" + " STR_TO_DATE('" + request.Substring(8, 8) + "', '%d%m%Y') AND yesorno LIKE 'false';";
-                command = new MySqlCommand(request, con);
-                reader = command.ExecuteReader();
-                double ii = 0;
-                while (reader.Read())
-                {
-                    ii += Convert.ToDouble(reader[0].ToString());
-                }
-                reader.Close();
-                label26.Text += ii + " бел.руб.";
+                    request = Regex.Replace(periodTB.Text, @"[^\d]+", "");
+                    request = "SELECT price FROM tservice WHERE period_ot BETWEEN STR_TO_DATE('" + request.Substring(0, 8) + "', '%d%m%Y')" + " AND" + " STR_TO_DATE('" + request.Substring(8, 8) + "', '%d%m%Y') AND yesorno LIKE 'false';";
+                    command = new MySqlCommand(request, con);
+                    reader = command.ExecuteReader();
+                    double ii = 0;
+                    while (reader.Read())
+                    {
+                        ii += Convert.ToDouble(reader[0].ToString());
+                    }
+                    reader.Close();
+                    label26.Text += ii + " бел.руб.";
 
-                request = Regex.Replace(periodTB.Text, @"[^\d]+", "");
-                request = "SELECT predoplata FROM (tservice LEFT JOIN tpredoplata ON tservice.id_service = tpredoplata.service) WHERE period_ot BETWEEN STR_TO_DATE('" + request.Substring(0, 8) + "', '%d%m%Y')" + " AND" + " STR_TO_DATE('" + request.Substring(8, 8) + "', '%d%m%Y') AND tpredoplata.yesorno like 'true' AND tservice.yesorno like 'false';";
-                command = new MySqlCommand(request, con);
-                reader = command.ExecuteReader();
-                ii = 0;
-                while (reader.Read())
-                {
-                    ii += Convert.ToDouble(reader[0].ToString());
-                }
-                reader.Close();
-                double predoplata = ii;
-                label25.Text += ii + " бел.руб.";
+                    request = Regex.Replace(periodTB.Text, @"[^\d]+", "");
+                    request = "SELECT predoplata FROM (tservice LEFT JOIN tpredoplata ON tservice.id_service = tpredoplata.service) WHERE period_ot BETWEEN STR_TO_DATE('" + request.Substring(0, 8) + "', '%d%m%Y')" + " AND" + " STR_TO_DATE('" + request.Substring(8, 8) + "', '%d%m%Y') AND tpredoplata.yesorno like 'true' AND tservice.yesorno like 'false';";
+                    command = new MySqlCommand(request, con);
+                    reader = command.ExecuteReader();
+                    ii = 0;
+                    while (reader.Read())
+                    {
+                        ii += Convert.ToDouble(reader[0].ToString());
+                    }
+                    reader.Close();
+                    double predoplata = ii;
+                    label25.Text += ii + " бел.руб.";
 
-                request = Regex.Replace(periodTB.Text, @"[^\d]+", "");
-                request = "SELECT price FROM tservice WHERE period_ot BETWEEN STR_TO_DATE('" + request.Substring(0, 8) + "', '%d%m%Y')" + " AND" + " STR_TO_DATE('" + request.Substring(8, 8) + "', '%d%m%Y') AND yesorno LIKE 'true';";
-                command = new MySqlCommand(request, con);
-                reader = command.ExecuteReader();
-                ii = 0;
-                while (reader.Read())
-                {
-                    ii += Convert.ToDouble(reader[0].ToString());
-                }
-                reader.Close();
-                label27.Text += ii + " бел.руб.";
+                    request = Regex.Replace(periodTB.Text, @"[^\d]+", "");
+                    request = "SELECT price FROM tservice WHERE period_ot BETWEEN STR_TO_DATE('" + request.Substring(0, 8) + "', '%d%m%Y')" + " AND" + " STR_TO_DATE('" + request.Substring(8, 8) + "', '%d%m%Y') AND yesorno LIKE 'true';";
+                    command = new MySqlCommand(request, con);
+                    reader = command.ExecuteReader();
+                    ii = 0;
+                    while (reader.Read())
+                    {
+                        ii += Convert.ToDouble(reader[0].ToString());
+                    }
+                    reader.Close();
+                    label27.Text += ii + " бел.руб.";
 
-                label23.Text += ii + predoplata + " бел.руб.";
+                    label23.Text += ii + predoplata + " бел.руб.";
+                }
+                catch
+                {
+                    MessageBox.Show("Дата введена в неверном формате");
+                }
             }
+            
             con.Close();
         }
         public void OpenTab6()

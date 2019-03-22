@@ -34,6 +34,7 @@
             this.заТекущийМесяцToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.за3МесяцаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.заГодToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.заВсеВремяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.пользовательскоеЗначениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.статистикаПоКлиентуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.запросКБДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,7 +50,6 @@
             this.idClientBTN = new System.Windows.Forms.Button();
             this.kindOfActivityBTN = new System.Windows.Forms.Button();
             this.telephoneClient = new System.Windows.Forms.MaskedTextBox();
-            this.заВсеВремяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,6 +105,13 @@
             this.заГодToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.заГодToolStripMenuItem.Text = "За год";
             this.заГодToolStripMenuItem.Click += new System.EventHandler(this.заГодToolStripMenuItem_Click);
+            // 
+            // заВсеВремяToolStripMenuItem
+            // 
+            this.заВсеВремяToolStripMenuItem.Name = "заВсеВремяToolStripMenuItem";
+            this.заВсеВремяToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.заВсеВремяToolStripMenuItem.Text = "За все время";
+            this.заВсеВремяToolStripMenuItem.Click += new System.EventHandler(this.заВсеВремяToolStripMenuItem_Click);
             // 
             // пользовательскоеЗначениеToolStripMenuItem
             // 
@@ -170,9 +177,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.Location = new System.Drawing.Point(306, 120);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 17);
+            this.label3.Size = new System.Drawing.Size(84, 17);
             this.label3.TabIndex = 5;
-            this.label3.Text = "ID_клиента";
+            this.label3.Text = "№_клиента";
             // 
             // kindOfActivity
             // 
@@ -243,13 +250,6 @@
             this.telephoneClient.Name = "telephoneClient";
             this.telephoneClient.Size = new System.Drawing.Size(288, 26);
             this.telephoneClient.TabIndex = 16;
-            // 
-            // заВсеВремяToolStripMenuItem
-            // 
-            this.заВсеВремяToolStripMenuItem.Name = "заВсеВремяToolStripMenuItem";
-            this.заВсеВремяToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
-            this.заВсеВремяToolStripMenuItem.Text = "За все время";
-            this.заВсеВремяToolStripMenuItem.Click += new System.EventHandler(this.заВсеВремяToolStripMenuItem_Click);
             // 
             // Form1
             // 
