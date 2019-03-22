@@ -27,7 +27,6 @@ namespace Курсовая_работа
             MySqlCommand command = new MySqlCommand(request,con);
             con.Close();
             telephoneClient.Mask = "(##)###-##-##";
-            MessageBox.Show("");
         }
 
         private void запросКБДToolStripMenuItem_Click(object sender, EventArgs e)
