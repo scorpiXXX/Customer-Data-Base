@@ -64,7 +64,7 @@
             // 
             this.emailCB.AutoSize = true;
             this.emailCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.emailCB.Location = new System.Drawing.Point(723, 100);
+            this.emailCB.Location = new System.Drawing.Point(720, 62);
             this.emailCB.Name = "emailCB";
             this.emailCB.Size = new System.Drawing.Size(131, 21);
             this.emailCB.TabIndex = 4;
@@ -76,7 +76,7 @@
             // 
             this.siteCB.AutoSize = true;
             this.siteCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.siteCB.Location = new System.Drawing.Point(722, 127);
+            this.siteCB.Location = new System.Drawing.Point(719, 89);
             this.siteCB.Name = "siteCB";
             this.siteCB.Size = new System.Drawing.Size(123, 21);
             this.siteCB.TabIndex = 5;
@@ -88,7 +88,7 @@
             // 
             this.addressCB.AutoSize = true;
             this.addressCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.addressCB.Location = new System.Drawing.Point(722, 154);
+            this.addressCB.Location = new System.Drawing.Point(719, 116);
             this.addressCB.Name = "addressCB";
             this.addressCB.Size = new System.Drawing.Size(132, 21);
             this.addressCB.TabIndex = 6;
@@ -100,7 +100,7 @@
             // 
             this.typeCB.AutoSize = true;
             this.typeCB.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.typeCB.Location = new System.Drawing.Point(722, 181);
+            this.typeCB.Location = new System.Drawing.Point(719, 143);
             this.typeCB.Name = "typeCB";
             this.typeCB.Size = new System.Drawing.Size(120, 38);
             this.typeCB.TabIndex = 7;
@@ -114,9 +114,7 @@
             this.SortList.FormattingEnabled = true;
             this.SortList.Items.AddRange(new object[] {
             "Сначала старые",
-            "Сначала новые",
-            "По алфавиту(А-Я)",
-            "По алфавиту(Я-А)"});
+            "Сначала новые"});
             this.SortList.Location = new System.Drawing.Point(720, 35);
             this.SortList.Name = "SortList";
             this.SortList.Size = new System.Drawing.Size(137, 21);

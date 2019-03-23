@@ -101,7 +101,15 @@ namespace Курсовая_работа
             ClientForm cf = new ClientForm(Convert.ToInt32(items[result]), frm);
             cf.Show();
         }
-
+        protected static bool needToReOrder(string s1, string s2)
+        {
+            for (int i = 0; i < (s1.Length > s2.Length ? s2.Length : s1.Length); i++)
+            {
+                if (s1.ToCharArray()[i] < s2.ToCharArray()[i]) return false;
+                if (s1.ToCharArray()[i] > s2.ToCharArray()[i]) return true;
+            }
+            return false;
+        }
         private void SortList_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (SortList.SelectedIndex == 0 && activeSort != 0)
