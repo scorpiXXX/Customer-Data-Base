@@ -47,6 +47,7 @@
             this.telephoneClientBTN = new System.Windows.Forms.Button();
             this.kindOfActivityBTN = new System.Windows.Forms.Button();
             this.telephoneClient = new System.Windows.Forms.MaskedTextBox();
+            this.allClientBTN = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -219,11 +220,22 @@
             this.telephoneClient.Size = new System.Drawing.Size(288, 26);
             this.telephoneClient.TabIndex = 16;
             // 
+            // allClientBTN
+            // 
+            this.allClientBTN.Location = new System.Drawing.Point(306, 163);
+            this.allClientBTN.Name = "allClientBTN";
+            this.allClientBTN.Size = new System.Drawing.Size(380, 52);
+            this.allClientBTN.TabIndex = 17;
+            this.allClientBTN.Text = "Список всех клиентов";
+            this.allClientBTN.UseVisualStyleBackColor = true;
+            this.allClientBTN.Click += new System.EventHandler(this.allClientBTN_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(698, 221);
+            this.Controls.Add(this.allClientBTN);
             this.Controls.Add(this.telephoneClient);
             this.Controls.Add(this.kindOfActivityBTN);
             this.Controls.Add(this.telephoneClientBTN);
@@ -266,6 +278,7 @@
         private System.Windows.Forms.ToolStripMenuItem пользовательскоеЗначениеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem статистикаПоКлиентуToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem заВсеВремяToolStripMenuItem;
+        private System.Windows.Forms.Button allClientBTN;
     }
 }
 

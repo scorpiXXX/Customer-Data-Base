@@ -105,6 +105,7 @@ namespace Курсовая_работа
         public void nameClient_TextChanged(object sender, EventArgs e)
         {
             nameClientLB.Items.Clear();
+            listService.Clear();
             MySqlConnection con = new MySqlConnection(connectBD);
             con.Open();
             string request = "SELECT id_client,name FROM client;";
@@ -164,6 +165,23 @@ namespace Курсовая_работа
         {
             Statistics st = new Statistics(this, 3);
             st.Show();
+        }
+
+        private void allClientBTN_Click(object sender, EventArgs e)
+        {
+            items.Clear();
+            MySqlConnection con = new MySqlConnection(connectBD);
+            con.Open();
+            string request = "SELECT id_client FROM client;";
+            MySqlCommand command = new MySqlCommand(request, con);            
+            MySqlDataReader reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                items.Add(reader[0].ToString());
+            }
+            SearchResult sr = new SearchResult(this, items);
+            sr.Show();
+            con.Close();
         }
     }
 }

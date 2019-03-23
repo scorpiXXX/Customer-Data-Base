@@ -15,6 +15,7 @@ namespace Курсовая_работа
     public partial class SearchResult : Form
     {
         List<string> items;
+        public int activeSort = 0;
         Form1 frm;
         public SearchResult(Form1 form,List<string> list)
         {
@@ -22,7 +23,7 @@ namespace Курсовая_работа
             frm = form;
             InitializeComponent();
             Output();
-            nowOldBTN.Enabled = false;
+            SortList.Text = "Сначала старые";
         }
 
         public void Output()
@@ -89,22 +90,6 @@ namespace Курсовая_работа
             this.Close();
         }
 
-        private void nowNewBTN_Click(object sender, EventArgs e)
-        {
-            items.Reverse();
-            Output();
-            nowOldBTN.Enabled = true;
-            nowNewBTN.Enabled = false;
-        }
-
-        private void nowOldBTN_Click(object sender, EventArgs e)
-        {
-            items.Reverse();
-            Output();
-            nowOldBTN.Enabled = false;
-            nowNewBTN.Enabled = true;
-        }
-
         private void emailCB_CheckedChanged(object sender, EventArgs e)
         {
             Output();
@@ -115,6 +100,22 @@ namespace Курсовая_работа
             int result = ResultLB.SelectedIndex;
             ClientForm cf = new ClientForm(Convert.ToInt32(items[result]), frm);
             cf.Show();
+        }
+
+        private void SortList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (SortList.SelectedIndex == 0 && activeSort != 0)
+            {
+                items.Reverse();
+                Output();
+                activeSort = 0;
+            }
+            if (SortList.SelectedIndex == 1 && activeSort != 1)
+            {
+                items.Reverse();
+                Output();
+                activeSort = 1;
+            }
         }
     }
 }
