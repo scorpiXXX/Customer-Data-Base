@@ -442,5 +442,59 @@ namespace Курсовая_работа
 
             }
         }
+        public void DeleteAllService()
+        {
+            MySqlConnection con = new MySqlConnection(form.connectBD);
+            con.Open();
+            for (int i = 0; i < listService.Count; i++)
+            {
+                string request = "DELETE FROM tdogovor WHERE service=" + listService[i];
+                MySqlCommand command = new MySqlCommand(request, con);
+                command.ExecuteScalar();
+                request = "DELETE FROM tservice_list WHERE service=" + listService[i];
+                command = new MySqlCommand(request, con);
+                command.ExecuteScalar();
+                request = "DELETE FROM tact WHERE service=" + listService[i];
+                command = new MySqlCommand(request, con);
+                command.ExecuteScalar();
+                request = "DELETE FROM ttz WHERE service=" + listService[i];
+                command = new MySqlCommand(request, con);
+                command.ExecuteScalar();
+                request = "DELETE FROM tpredoplata WHERE service=" + listService[i];
+                command = new MySqlCommand(request, con);
+                command.ExecuteScalar();
+                request = "DELETE FROM tservice WHERE id_service=" + listService[i];
+                command = new MySqlCommand(request, con);
+                command.ExecuteScalar();
+            }
+
+            con.Close();
+        }
+        private void deleteBTN_Click(object sender, EventArgs e)
+        {
+            DeleteAllService();
+            MySqlConnection con = new MySqlConnection(form.connectBD);
+            con.Open();
+            string request = "DELETE FROM tnote WHERE client=" + set;
+            MySqlCommand command = new MySqlCommand(request, con);
+            command.ExecuteScalar();
+            request = "DELETE FROM tanketa WHERE client=" + set;
+            command = new MySqlCommand(request, con);
+            command.ExecuteScalar();
+            request = "DELETE FROM tinformation WHERE client=" + set;
+            command = new MySqlCommand(request, con);
+            command.ExecuteScalar();
+            request = "DELETE FROM tsocial WHERE client=" + set;
+            command = new MySqlCommand(request, con);
+            command.ExecuteScalar();
+            request = "DELETE FROM ttelephone WHERE client=" + set;
+            command = new MySqlCommand(request, con);
+            command.ExecuteScalar();
+            request = "DELETE FROM client WHERE id_client=" + set;
+            command = new MySqlCommand(request, con);
+            command.ExecuteScalar();
+            con.Close();
+            this.Close();
+        }
     }
 }

@@ -60,6 +60,7 @@
             this.addService = new System.Windows.Forms.Button();
             this.Cansel = new System.Windows.Forms.Button();
             this.save = new System.Windows.Forms.Button();
+            this.deleteBTN = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.telephoneDGV)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -396,7 +397,7 @@
             this.Cansel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Cansel.Location = new System.Drawing.Point(12, 454);
             this.Cansel.Name = "Cansel";
-            this.Cansel.Size = new System.Drawing.Size(422, 31);
+            this.Cansel.Size = new System.Drawing.Size(369, 31);
             this.Cansel.TabIndex = 5;
             this.Cansel.Text = "Отменить";
             this.Cansel.UseVisualStyleBackColor = true;
@@ -405,19 +406,31 @@
             // save
             // 
             this.save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.save.Location = new System.Drawing.Point(440, 454);
+            this.save.Location = new System.Drawing.Point(486, 454);
             this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(422, 31);
+            this.save.Size = new System.Drawing.Size(376, 31);
             this.save.TabIndex = 6;
             this.save.Text = "Сохранить";
             this.save.UseVisualStyleBackColor = true;
             this.save.Click += new System.EventHandler(this.save_Click);
+            // 
+            // deleteBTN
+            // 
+            this.deleteBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteBTN.Location = new System.Drawing.Point(387, 454);
+            this.deleteBTN.Name = "deleteBTN";
+            this.deleteBTN.Size = new System.Drawing.Size(93, 31);
+            this.deleteBTN.TabIndex = 7;
+            this.deleteBTN.Text = "Удалить";
+            this.deleteBTN.UseVisualStyleBackColor = true;
+            this.deleteBTN.Click += new System.EventHandler(this.deleteBTN_Click);
             // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(875, 497);
+            this.Controls.Add(this.deleteBTN);
             this.Controls.Add(this.save);
             this.Controls.Add(this.Cansel);
             this.Controls.Add(this.addService);
@@ -474,5 +487,6 @@
         private System.Windows.Forms.Button contactBTN;
         private System.Windows.Forms.Button anketaBTN;
         private System.Windows.Forms.Button techInfoBTN;
+        private System.Windows.Forms.Button deleteBTN;
     }
 }
