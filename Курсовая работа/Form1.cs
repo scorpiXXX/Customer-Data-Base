@@ -17,6 +17,7 @@ namespace Курсовая_работа
         public string connectBD = "server=localhost;user=root;database=client_db;password=2011;charset=utf8";
         List<string> items = new List<string>();
         List<string> cache = new List<string>();
+        List<int> listService = new List<int>();
         public Form1()
         {
             InitializeComponent();
@@ -43,25 +44,7 @@ namespace Курсовая_работа
 
         private void idClientBTN_Click(object sender, EventArgs e)
         {
-            MySqlConnection con = new MySqlConnection(connectBD);
-            con.Open();
-            string request = "SELECT name from client where id_client="+idClient.Text+";";
-            MySqlCommand command = new MySqlCommand(request, con);
-            try
-            {
-                if (command.ExecuteScalar().ToString() != "")
-                {
-                    con.Close();
-                    ClientForm cf = new ClientForm(Convert.ToInt32(idClient.Text), this);
-                    cf.Show();
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Пользователь с таким ID не найден!","Ошибка",MessageBoxButtons.OK,MessageBoxIcon.Error);
-                con.Close();
-            }
-            idClient.Text = "";
+            
         }
 
         private void telephoneClientBTN_Click(object sender, EventArgs e)
@@ -130,7 +113,11 @@ namespace Курсовая_работа
             MySqlDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
-                if (reader[1].ToString().ToLower().Contains(nameClient.Text.ToLower())) nameClientLB.Items.Add("[" + reader[0].ToString() + "] " + reader[1]);
+                if (reader[1].ToString().ToLower().Contains(nameClient.Text.ToLower()))
+                {
+                    nameClientLB.Items.Add(reader[1]);
+                    listService.Add(Convert.ToInt32(reader[0].ToString()));
+                }
             }
             if (nameClient.Text == "")
                 nameClientLB.Items.Clear();
@@ -138,8 +125,8 @@ namespace Курсовая_работа
         }
         private void nameClientLB_DoubleClick(object sender, EventArgs e)
         {
-            string result = Regex.Match(nameClientLB.GetItemText(nameClientLB.SelectedItem), @"\[(.*?)\]").Groups[1].Value;
-            ClientForm cf = new ClientForm(Convert.ToInt32(result), this);
+            int result = nameClientLB.SelectedIndex;
+            ClientForm cf = new ClientForm(listService[result], this);
             cf.Show();
         }
 

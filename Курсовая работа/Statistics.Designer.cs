@@ -72,11 +72,8 @@
             this.label37 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.telephoneClient = new System.Windows.Forms.MaskedTextBox();
-            this.idClientBTN = new System.Windows.Forms.Button();
             this.telephoneClientBTN = new System.Windows.Forms.Button();
             this.nameClientLB = new System.Windows.Forms.ListBox();
-            this.idClient = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.nameClient = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
@@ -499,11 +496,8 @@
             this.tabPage5.Controls.Add(this.label37);
             this.tabPage5.Controls.Add(this.label39);
             this.tabPage5.Controls.Add(this.telephoneClient);
-            this.tabPage5.Controls.Add(this.idClientBTN);
             this.tabPage5.Controls.Add(this.telephoneClientBTN);
             this.tabPage5.Controls.Add(this.nameClientLB);
-            this.tabPage5.Controls.Add(this.idClient);
-            this.tabPage5.Controls.Add(this.label31);
             this.tabPage5.Controls.Add(this.label32);
             this.tabPage5.Controls.Add(this.nameClient);
             this.tabPage5.Controls.Add(this.label33);
@@ -572,17 +566,6 @@
             this.telephoneClient.Size = new System.Drawing.Size(288, 26);
             this.telephoneClient.TabIndex = 28;
             // 
-            // idClientBTN
-            // 
-            this.idClientBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.idClientBTN.Location = new System.Drawing.Point(591, 69);
-            this.idClientBTN.Name = "idClientBTN";
-            this.idClientBTN.Size = new System.Drawing.Size(86, 26);
-            this.idClientBTN.TabIndex = 26;
-            this.idClientBTN.Text = "Открыть";
-            this.idClientBTN.UseVisualStyleBackColor = true;
-            this.idClientBTN.Click += new System.EventHandler(this.idClientBTN_Click);
-            // 
             // telephoneClientBTN
             // 
             this.telephoneClientBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -604,24 +587,6 @@
             this.nameClientLB.Size = new System.Drawing.Size(288, 104);
             this.nameClientLB.TabIndex = 24;
             this.nameClientLB.DoubleClick += new System.EventHandler(this.nameClientLB_DoubleClick);
-            // 
-            // idClient
-            // 
-            this.idClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.idClient.Location = new System.Drawing.Point(297, 69);
-            this.idClient.Name = "idClient";
-            this.idClient.Size = new System.Drawing.Size(288, 26);
-            this.idClient.TabIndex = 21;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label31.Location = new System.Drawing.Point(297, 49);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(83, 17);
-            this.label31.TabIndex = 20;
-            this.label31.Text = "ID_клиента";
             // 
             // label32
             // 
@@ -732,11 +697,8 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.MaskedTextBox telephoneClient;
-        private System.Windows.Forms.Button idClientBTN;
         private System.Windows.Forms.Button telephoneClientBTN;
         private System.Windows.Forms.ListBox nameClientLB;
-        private System.Windows.Forms.TextBox idClient;
-        private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TextBox nameClient;
         private System.Windows.Forms.Label label33;

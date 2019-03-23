@@ -30,7 +30,6 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.periodTB = new System.Windows.Forms.MaskedTextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -53,14 +52,15 @@
             this.dogovorCB = new System.Windows.Forms.CheckBox();
             this.closeBTN = new System.Windows.Forms.Button();
             this.saveBTN = new System.Windows.Forms.Button();
+            this.deleteService = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.deleteService);
             this.groupBox1.Controls.Add(this.periodTB);
-            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.checkBox2);
             this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.label6);
@@ -88,15 +88,6 @@
             this.periodTB.Name = "periodTB";
             this.periodTB.Size = new System.Drawing.Size(247, 23);
             this.periodTB.TabIndex = 20;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 26);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 17);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "ID услуги:";
             // 
             // checkBox2
             // 
@@ -316,6 +307,16 @@
             this.saveBTN.UseVisualStyleBackColor = true;
             this.saveBTN.Click += new System.EventHandler(this.saveBTN_Click);
             // 
+            // deleteService
+            // 
+            this.deleteService.Location = new System.Drawing.Point(243, 29);
+            this.deleteService.Name = "deleteService";
+            this.deleteService.Size = new System.Drawing.Size(153, 26);
+            this.deleteService.TabIndex = 21;
+            this.deleteService.Text = "Удалить услугу";
+            this.deleteService.UseVisualStyleBackColor = true;
+            this.deleteService.Click += new System.EventHandler(this.deleteService_Click);
+            // 
             // Service
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,7 +362,7 @@
         private System.Windows.Forms.CheckBox dogovorCB;
         private System.Windows.Forms.Button closeBTN;
         private System.Windows.Forms.Button saveBTN;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.MaskedTextBox periodTB;
+        private System.Windows.Forms.Button deleteService;
     }
 }

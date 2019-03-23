@@ -47,7 +47,6 @@ namespace Курсовая_работа
                     reader.Close();
                     con.Close();
                     serviceNumber = (Convert.ToInt32(request) + 1);
-                    label7.Text += serviceNumber;
                 }
                 else
                 {
@@ -57,13 +56,11 @@ namespace Курсовая_работа
             catch
             {
                 serviceNumber = 1;
-                label7.Text += serviceNumber;
             }
 
         }
         public void Open()
         {
-            label7.Text += serviceNumber;
             MySqlConnection con = new MySqlConnection(form.connectBD);
             con.Open();
 
@@ -314,6 +311,33 @@ namespace Курсовая_работа
         private void openBTN_Click(object sender, EventArgs e)
         {
             Process.Start(@"" + Environment.CurrentDirectory + @"\Data\Users\user[" + clientNumber + @"]\service["+serviceNumber+"]");
+        }
+
+        private void deleteService_Click(object sender, EventArgs e)
+        {
+            MySqlConnection con = new MySqlConnection(form.connectBD);
+            con.Open();
+
+            string request = "DELETE FROM tdogovor WHERE service="+serviceNumber;
+            MySqlCommand command = new MySqlCommand(request, con);
+            command.ExecuteScalar();
+            request = "DELETE FROM tservice_list WHERE service=" + serviceNumber;
+            command = new MySqlCommand(request, con);
+            command.ExecuteScalar();
+            request = "DELETE FROM tact WHERE service=" + serviceNumber;
+            command = new MySqlCommand(request, con);
+            command.ExecuteScalar();
+            request = "DELETE FROM ttz WHERE service=" + serviceNumber;
+            command = new MySqlCommand(request, con);
+            command.ExecuteScalar();
+            request = "DELETE FROM tpredoplata WHERE service=" + serviceNumber;
+            command = new MySqlCommand(request, con);
+            command.ExecuteScalar();
+            request = "DELETE FROM tservice WHERE id_service=" + serviceNumber;
+            command = new MySqlCommand(request, con);
+            command.ExecuteScalar();
+            con.Close();
+            this.Close();
         }
     }
 }

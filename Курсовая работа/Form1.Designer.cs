@@ -41,13 +41,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.nameClient = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.idClient = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.kindOfActivity = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.nameClientLB = new System.Windows.Forms.ListBox();
             this.telephoneClientBTN = new System.Windows.Forms.Button();
-            this.idClientBTN = new System.Windows.Forms.Button();
             this.kindOfActivityBTN = new System.Windows.Forms.Button();
             this.telephoneClient = new System.Windows.Forms.MaskedTextBox();
             this.menuStrip1.SuspendLayout();
@@ -163,28 +160,10 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Телефон";
             // 
-            // idClient
-            // 
-            this.idClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.idClient.Location = new System.Drawing.Point(306, 140);
-            this.idClient.Name = "idClient";
-            this.idClient.Size = new System.Drawing.Size(288, 26);
-            this.idClient.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(306, 120);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "№_клиента";
-            // 
             // kindOfActivity
             // 
             this.kindOfActivity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.kindOfActivity.Location = new System.Drawing.Point(306, 189);
+            this.kindOfActivity.Location = new System.Drawing.Point(306, 131);
             this.kindOfActivity.Name = "kindOfActivity";
             this.kindOfActivity.Size = new System.Drawing.Size(288, 26);
             this.kindOfActivity.TabIndex = 10;
@@ -193,7 +172,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(306, 169);
+            this.label5.Location = new System.Drawing.Point(306, 111);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(129, 17);
             this.label5.TabIndex = 9;
@@ -221,21 +200,10 @@
             this.telephoneClientBTN.UseVisualStyleBackColor = true;
             this.telephoneClientBTN.Click += new System.EventHandler(this.telephoneClientBTN_Click);
             // 
-            // idClientBTN
-            // 
-            this.idClientBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.idClientBTN.Location = new System.Drawing.Point(600, 140);
-            this.idClientBTN.Name = "idClientBTN";
-            this.idClientBTN.Size = new System.Drawing.Size(86, 26);
-            this.idClientBTN.TabIndex = 13;
-            this.idClientBTN.Text = "Открыть";
-            this.idClientBTN.UseVisualStyleBackColor = true;
-            this.idClientBTN.Click += new System.EventHandler(this.idClientBTN_Click);
-            // 
             // kindOfActivityBTN
             // 
             this.kindOfActivityBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.kindOfActivityBTN.Location = new System.Drawing.Point(600, 187);
+            this.kindOfActivityBTN.Location = new System.Drawing.Point(600, 129);
             this.kindOfActivityBTN.Name = "kindOfActivityBTN";
             this.kindOfActivityBTN.Size = new System.Drawing.Size(86, 28);
             this.kindOfActivityBTN.TabIndex = 15;
@@ -258,13 +226,10 @@
             this.ClientSize = new System.Drawing.Size(698, 221);
             this.Controls.Add(this.telephoneClient);
             this.Controls.Add(this.kindOfActivityBTN);
-            this.Controls.Add(this.idClientBTN);
             this.Controls.Add(this.telephoneClientBTN);
             this.Controls.Add(this.nameClientLB);
             this.Controls.Add(this.kindOfActivity);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.idClient);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.nameClient);
             this.Controls.Add(this.label1);
@@ -289,13 +254,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox nameClient;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox idClient;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox kindOfActivity;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListBox nameClientLB;
         private System.Windows.Forms.Button telephoneClientBTN;
-        private System.Windows.Forms.Button idClientBTN;
         private System.Windows.Forms.Button kindOfActivityBTN;
         private System.Windows.Forms.MaskedTextBox telephoneClient;
         private System.Windows.Forms.ToolStripMenuItem заТекущийМесяцToolStripMenuItem;

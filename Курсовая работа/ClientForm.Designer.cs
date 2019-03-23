@@ -252,6 +252,7 @@
             this.label1.Size = new System.Drawing.Size(87, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID клиента: ";
+            this.label1.Visible = false;
             // 
             // groupBox2
             // 

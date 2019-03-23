@@ -21,8 +21,7 @@ namespace Курсовая_работа
         public int set;
         public bool check = false;
         MaskedTextBox mtb;
-        List<string> list1 = new List<string>();
-        List<string> list2 = new List<string>();
+        List<int> listService = new List<int>();
         public ClientForm(int clientNumber, Form1 frm)
         {
             form = frm;
@@ -182,6 +181,7 @@ namespace Курсовая_работа
                 anketaBTN.Enabled = false;
             }
             serviceLB.Items.Clear();
+            listService.Clear();
             try
             {
                 string request = "SELECT id_service,name,period_ot,period_do from tservice where client=" + clientNumber + ";";
@@ -195,20 +195,14 @@ namespace Курсовая_работа
                     else per_ot = reader3[2].ToString().Substring(0, 10);
                     if (reader3[3].ToString().Substring(0, 10) == "01.01.1970") per_do = "дата не указана";
                     else per_do = reader3[3].ToString().Substring(0, 10);
-                    serviceLB.Items.Add("[" + reader3[0] + "] " + reader3[1] + " | " + per_ot + "-" + per_do);
+                    serviceLB.Items.Add(reader3[1] + " | " + per_ot + "-" + per_do);
+                    listService.Add(Convert.ToInt32(reader3[0].ToString()));
                 }
                 reader3.Close();
             }
             catch
             {
             }
-
-
-
-
-
-
-
             con.Close();
             this.Refresh();
         }
@@ -439,8 +433,8 @@ namespace Курсовая_работа
         {
             try
             {
-                string result = Regex.Match(serviceLB.GetItemText(serviceLB.SelectedItem), @"\[(.*?)\]").Groups[1].Value;
-                Service ser = new Service(set, Convert.ToInt32(result), form, "open");
+                int result = serviceLB.SelectedIndex;
+                Service ser = new Service(set, listService[result], form, "open");
                 ser.Show();
             }
             catch

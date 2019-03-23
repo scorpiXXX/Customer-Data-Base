@@ -43,7 +43,7 @@ namespace Курсовая_работа
                 MySqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    string result = "[" + items[i] + "] " + reader[0] + " (" + reader[1] + ")";
+                    string result = reader[0] + " (" + reader[1] + ")";
                     int iReader = 2;
                     if (emailCB.Checked)
                     {
@@ -112,8 +112,8 @@ namespace Курсовая_работа
 
         private void ResultLB_DoubleClick(object sender, EventArgs e)
         {
-            string result = Regex.Match(ResultLB.GetItemText(ResultLB.SelectedItem), @"\[(.*?)\]").Groups[1].Value;
-            ClientForm cf = new ClientForm(Convert.ToInt32(result), frm);
+            int result = ResultLB.SelectedIndex;
+            ClientForm cf = new ClientForm(Convert.ToInt32(items[result]), frm);
             cf.Show();
         }
     }
